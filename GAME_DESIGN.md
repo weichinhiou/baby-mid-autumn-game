@@ -1,7 +1,7 @@
 # 寶寶過中秋｜遊戲設計與實作規則
 
 **文件日期：** 2026-09-25  
-**版本基準：** 目前遊戲的 `mooncake-game/dist/index.html` 與同目錄圖片資產  
+**版本基準：** GitHub 專案根目錄的 `index.html` 與同目錄圖片資產（Sites 原始專案對應 `mooncake-game/dist/index.html`）  
 **遊戲網址：** https://mooncake-baby-adventure.weijinxio.chatgpt.site/
 
 > 本文件記錄目前程式實際實作的玩法，數值若有調整，以更新後的程式與文件為準。此遊戲為單人、單回合、純前端的中秋節接物遊戲。
@@ -107,3 +107,7 @@ pomelo-fast.webp
 目前的 Sites 遊戲網址也已設定為公開存取；若只是分享遊戲，可先用無痕視窗驗證現有網址能否直接開啟。GitHub Pages 是另外一個獨立的公開託管選項。
 
 **GitHub 官方參考：** [GitHub Pages 簡介](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[建立 GitHub Pages 網站](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)、[設定發布來源](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+
+## 10. 開發踩坑紀錄
+
+圖片傳輸與首屏載入、Canvas 舊版瀏覽器 fallback、iOS Web Audio 恢復，以及實機測試範圍，另整理於 [LESSONS_LEARNED.md](LESSONS_LEARNED.md)。新專案可沿用該文件的檢查清單與故障紀錄格式。
