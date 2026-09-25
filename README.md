@@ -4,13 +4,16 @@
 
 ## 試玩
 
+[立即開始遊戲](https://weichinhiou.github.io/baby-mid-autumn-game/)
+
+
 下載本儲存庫後，直接用瀏覽器開啟 `index.html`。遊戲不需要帳號、資料庫或建置指令。
 
 ## GitHub Pages
 
 在本儲存庫的 **Settings → Pages → Build and deployment** 選擇 **Deploy from a branch**，分支選 `main`，資料夾選 `/(root)`，按 **Save**。發布後網址為 `https://<你的 GitHub 帳號>.github.io/<儲存庫名稱>/`。
 
-所有 PNG 必須與 `index.html` 位於同一目錄，並保持檔名不變。從專案路徑發布時，圖片仍會正常載入，因為程式使用相對路徑。
+所有 WebP 必須與 `index.html` 位於同一目錄，並保持檔名不變。從專案路徑發布時，圖片仍會正常載入，因為程式使用相對路徑。
 
 ## 規格
 

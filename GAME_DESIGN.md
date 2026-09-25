@@ -22,12 +22,12 @@
 
 | 物件 | 出現權重 | 接到的即時效果 | 遊戲內效果標示 | 圖片檔 |
 | --- | ---: | --- | --- | --- |
-| 月餅 | 44% | 分數 +1 | `+1分` | `mooncake-icon.png` |
-| 炸彈 | 15% | 分數 −2 | `−2分` | `bomb-icon.png` |
-| 熟烤肉串 | 12% | 剩餘時間 +3 秒 | `+3秒` | `skewer-cooked.png` |
-| 焦烤串 | 10% | 剩餘時間 −5 秒，最低為 0 | `−5秒` | `skewer-burnt.png` |
-| 未熟烤串 | 10% | 寶寶無法移動 3 秒 | `卡3秒` | `skewer-raw.png` |
-| 柚子 | 9% | 分數 +5 | `+5分` | `pomelo.png` |
+| 月餅 | 44% | 分數 +1 | `+1分` | `mooncake-icon-fast.webp` |
+| 炸彈 | 15% | 分數 −2 | `−2分` | `bomb-icon-fast.webp` |
+| 熟烤肉串 | 12% | 剩餘時間 +3 秒 | `+3秒` | `skewer-cooked-fast.webp` |
+| 焦烤串 | 10% | 剩餘時間 −5 秒，最低為 0 | `−5秒` | `skewer-burnt-fast.webp` |
+| 未熟烤串 | 10% | 寶寶無法移動 3 秒 | `卡3秒` | `skewer-raw-fast.webp` |
+| 柚子 | 9% | 分數 +5 | `+5分` | `pomelo-fast.webp` |
 
 **邊界規則：** 分數可以是負數，沒有最低 0 分限制。接到焦烤串而將剩餘時間扣到 0，遊戲會在本幀結束時結算。未熟烤串不扣分也不扣秒；再次接到未熟烤串，卡住時間重新設為 3 秒，而非累加。卡住期間寶寶無法移動，物件仍然落下，也仍可碰撞和觸發效果。漏接任何物件不扣分、不扣秒。
 
@@ -63,7 +63,7 @@
 
 **美術：** 寶寶是戴兔耳帽、髮量少、爬行姿勢的清晰像素風角色；月餅、炸彈、三種烤串與柚子各用獨立圖片，放大繪製時關閉平滑以保留清楚的像素邊緣。背景沿用目前的中秋場景與原有月餅切面。圖片載入前以背景色或表情符號作為暫時替代。
 
-**直橫式：** 直式手機條件為視窗寬度不超過 700 CSS 像素且為直向，此時採 540 × 960 虛擬畫布與 `mooncake-portrait.png`，天空延伸以容納較高畫面。其他情況採 960 × 540 虛擬畫布與 `mooncake.png`。手機直式時開始／結算卡片疊於全視窗、物件說明改成單欄；橫式保留原本 16:9 畫面。畫布像素比例最高取裝置像素比 3，視窗改變尺寸或方向時更新配置。
+**直橫式：** 直式手機條件為視窗寬度不超過 700 CSS 像素且為直向，此時採 540 × 960 虛擬畫布與 `mooncake-portrait-fast.webp`，天空延伸以容納較高畫面。其他情況採 960 × 540 虛擬畫布與 `mooncake-fast.webp`。手機直式時開始／結算卡片疊於全視窗、物件說明改成單欄；橫式保留原本 16:9 畫面。畫布像素比例最高取裝置像素比 3，視窗改變尺寸或方向時更新配置。
 
 ## 6. 音效
 
@@ -71,21 +71,21 @@
 
 ## 7. 技術與資料範圍
 
-遊戲由單一 `index.html`（HTML、CSS、原生 JavaScript）和九張 PNG 圖片構成，不依賴帳號、遊戲伺服器、資料庫、第三方 JavaScript 套件或建置步驟。畫面以 Canvas 及 `requestAnimationFrame` 更新。分數、遊戲狀態只保留在目前分頁記憶體；重新整理後不會保留紀錄，也沒有排行榜或跨裝置同步。分數由瀏覽器端計算，不能作為有防作弊要求的競賽成績。
+遊戲由單一 `index.html`（HTML、CSS、原生 JavaScript）和九張 WebP 圖片構成，不依賴帳號、遊戲伺服器、資料庫、第三方 JavaScript 套件或建置步驟。畫面以 Canvas 及 `requestAnimationFrame` 更新。分數、遊戲狀態只保留在目前分頁記憶體；重新整理後不會保留紀錄，也沒有排行榜或跨裝置同步。分數由瀏覽器端計算，不能作為有防作弊要求的競賽成績。
 
 **部署所需檔案（全部放在網站根目錄）：**
 
 ```text
 index.html
-mooncake.png
-mooncake-portrait.png
-baby-pixel-crisp.png
-mooncake-icon.png
-bomb-icon.png
-skewer-cooked.png
-skewer-burnt.png
-skewer-raw.png
-pomelo.png
+mooncake-fast.webp
+mooncake-portrait-fast.webp
+baby-pixel-fast.webp
+mooncake-icon-fast.webp
+bomb-icon-fast.webp
+skewer-cooked-fast.webp
+skewer-burnt-fast.webp
+skewer-raw-fast.webp
+pomelo-fast.webp
 ```
 
 ## 8. 可驗收情境
@@ -102,7 +102,7 @@ pomelo.png
 
 此專案是純靜態網頁，可將上述部署檔案上傳至 GitHub 儲存庫根目錄，使用 GitHub Pages 發布；訪客透過公開網址瀏覽，不需登入 GPT，也不需 GitHub 帳號。若使用 GitHub Free，GitHub Pages 所屬儲存庫須設為公開；因此原始碼與圖片也可被他人查看。儲存庫名稱若為 `baby-mid-autumn-game`，網址一般為 `https://<GitHub使用者名稱>.github.io/baby-mid-autumn-game/`。
 
-操作步驟：建立公開儲存庫 → 把 `index.html` 與九張 PNG 放在儲存庫根目錄並提交 → 至 **Settings → Pages → Build and deployment** 選擇 **Deploy from a branch**，指定 `main` 與 `/(root)` → 儲存後等 GitHub Pages 完成發布 → 用無痕視窗實際開啟網址、測試手機直式與音效。只把檔案放在 GitHub 儲存庫不會自動變成 Pages 網站，必須設定發布來源。未來更新原有 Sites 網址和 GitHub Pages 網址時，兩邊的內容也需各自同步。
+操作步驟：建立公開儲存庫 → 把 `index.html` 與九張 WebP 放在儲存庫根目錄並提交 → 至 **Settings → Pages → Build and deployment** 選擇 **Deploy from a branch**，指定 `main` 與 `/(root)` → 儲存後等 GitHub Pages 完成發布 → 用無痕視窗實際開啟網址、測試手機直式與音效。只把檔案放在 GitHub 儲存庫不會自動變成 Pages 網站，必須設定發布來源。未來更新原有 Sites 網址和 GitHub Pages 網址時，兩邊的內容也需各自同步。
 
 目前的 Sites 遊戲網址也已設定為公開存取；若只是分享遊戲，可先用無痕視窗驗證現有網址能否直接開啟。GitHub Pages 是另外一個獨立的公開託管選項。
 
